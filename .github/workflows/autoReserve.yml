@@ -1,15 +1,19 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
+
 name: imaotai-action
 
 on:
+  workflow_dispatch: 
   push:
     branches: [ "master" ]
     paths:
       - '.github/workflows/**'
   schedule:
-    - cron: '48,11 0,1 * * *'
+    - cron: '30 23 * * *' # 北京时间 9:10
+    - cron: '10 0 * * *' # 北京时间 9:50
+    
 
 env:
   TZ: Asia/Shanghai
